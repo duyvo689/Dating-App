@@ -26,7 +26,7 @@ class Login extends StatelessWidget {
             Expanded(
               child: Center(
                 child: Column(
-                  children: [
+                  children: const [
                     Text(
                       'Singup to continue',
                       textAlign: TextAlign.center,

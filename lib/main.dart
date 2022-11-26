@@ -1,6 +1,7 @@
+import 'package:dating_app/pages/home.dart';
 import 'package:dating_app/pages/login.dart';
-import 'package:dating_app/pages/my_phone.dart';
 import 'package:dating_app/pages/otp_form.dart';
+import 'package:dating_app/pages/root_app.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -27,9 +28,11 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => const Login(),
+        '/': (context) => RootApp(),
         '/my_phone': (context) => const OtpForm(),
-        // '/otp_form': (context) => const OtpForm(),
+        '/my_home': (context) => const OtpForm(),
+        '/otp_form': (context) => const OtpForm(),
+        '/login': (context) => const Login(),
       },
     );
   }

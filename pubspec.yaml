@@ -40,6 +40,8 @@ dependencies:
   supabase_flutter: ^1.1.0
   flutter_svg: ^1.1.6
   validators: ^3.0.0
+  persistent_bottom_nav_bar: ^4.0.2
+  connectivity_plus: ^2.3.6+1
 
 dev_dependencies:
   flutter_test:
@@ -80,6 +82,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+  fonts:
+    - family:  TikTokIcons
+      fonts:
+       - asset: assets/fonts/TikTokIcons.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:
