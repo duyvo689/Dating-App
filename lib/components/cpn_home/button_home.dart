@@ -9,8 +9,8 @@ class ButtonHome extends StatelessWidget {
     return Container(
       height: 50,
       width: 50,
-      decoration:
-          const ShapeDecoration(color: AppColors.duy, shape: CircleBorder()),
+      decoration: const ShapeDecoration(
+          color: AppColors.dGrayColor, shape: CircleBorder()),
       child: Center(
         child: Icon(
           icon,

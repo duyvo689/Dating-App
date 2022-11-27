@@ -16,7 +16,7 @@ class RootApp extends StatefulWidget {
 }
 
 class _RootAppState extends State<RootApp> {
-  Color mainColor = AppColors.dtext;
+  Color mainColor = AppColors.dPrimaryColor;
   final PersistentTabController _controller =
       PersistentTabController(initialIndex: 0);
 
@@ -73,15 +73,15 @@ class _RootAppState extends State<RootApp> {
         context,
         controller: _controller,
         hideNavigationBarWhenKeyboardShows: true,
-        screens: [
+        screens: const [
           HomePage(),
-          const Text('duy'),
-          const Text('duy'),
-          const Text('duy'),
+          Text('duy'),
+          Text('duy'),
+          Text('duy'),
         ],
         items: _navBarsItems(),
         navBarStyle: NavBarStyle.style6,
-        backgroundColor: AppColors.duy,
+        backgroundColor: AppColors.dLightDark,
       ),
     );
   }
