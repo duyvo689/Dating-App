@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     final PageController controller = PageController();
     return Scaffold(
-      backgroundColor: AppColors.dLightDark,
+      backgroundColor: Colors.black,
       body: Stack(children: [
         PageView(
           scrollDirection: Axis.vertical,

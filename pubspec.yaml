@@ -42,6 +42,7 @@ dependencies:
   validators: ^3.0.0
   persistent_bottom_nav_bar: ^4.0.2
   connectivity_plus: ^2.3.6+1
+  unicons: ^2.1.0
 
 dev_dependencies:
   flutter_test:

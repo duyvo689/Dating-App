@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => RootApp(),
+        '/': (context) => const RootApp(),
         '/my_phone': (context) => const OtpForm(),
         '/my_home': (context) => const OtpForm(),
         '/otp_form': (context) => const OtpForm(),

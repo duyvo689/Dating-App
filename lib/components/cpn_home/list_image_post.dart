@@ -92,8 +92,9 @@ List<Widget> indicators(imagesLength, currentIndex) {
       width: 6,
       height: 6,
       decoration: BoxDecoration(
-          color:
-              currentIndex == index ? AppColors.dPrimaryColor : Colors.black26,
+          color: currentIndex == index
+              ? AppColors.dPrimaryColor
+              : AppColors.dGrayColor,
           shape: BoxShape.circle),
     );
   });

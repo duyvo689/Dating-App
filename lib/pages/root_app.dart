@@ -1,5 +1,6 @@
 import 'package:dating_app/configs/colors.dart';
 import 'package:dating_app/pages/home.dart';
+import 'package:dating_app/pages/profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
@@ -77,11 +78,11 @@ class _RootAppState extends State<RootApp> {
           HomePage(),
           Text('duy'),
           Text('duy'),
-          Text('duy'),
+          Profile(),
         ],
         items: _navBarsItems(),
         navBarStyle: NavBarStyle.style6,
-        backgroundColor: AppColors.dLightDark,
+        backgroundColor: Colors.transparent,
       ),
     );
   }
