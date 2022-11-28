@@ -1,7 +1,6 @@
 import 'package:dating_app/components/cpn_profile/list_image_profile.dart';
 import 'package:dating_app/configs/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:unicons/unicons.dart';
 
 class Profile extends StatelessWidget {

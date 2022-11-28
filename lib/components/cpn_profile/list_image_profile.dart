@@ -1,5 +1,7 @@
 import 'package:dating_app/configs/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:photo_view/photo_view.dart';
+import 'package:photo_view/photo_view_gallery.dart';
 
 List<String> images = [
   "https://i.pinimg.com/originals/dc/03/ce/dc03ce7c7192e0946a4567f591d56ba9.jpg",
@@ -18,6 +20,15 @@ class ListImageProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    void openGallery(index) => Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => GalleryWidget(
+                    urlImages: images,
+                    index: index,
+                  )),
+        );
+
     var deviceSize = MediaQuery.of(context).size;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,13 +48,60 @@ class ListImageProfile extends StatelessWidget {
               crossAxisSpacing: 4.0,
               mainAxisSpacing: 4.0),
           itemBuilder: (BuildContext context, int index) {
-            return Image.network(
-              images[index],
-              fit: BoxFit.cover,
+            return InkWell(
+              child: Image.network(
+                images[index],
+                fit: BoxFit.cover,
+              ),
+              onTap: (() => openGallery(index)),
             );
           },
         ),
       ],
     );
+  }
+}
+
+class GalleryWidget extends StatefulWidget {
+  GalleryWidget({super.key, required this.urlImages, this.index = 0})
+      : pageController = PageController(initialPage: index);
+  final List<String> urlImages;
+  final PageController pageController;
+  final int index;
+  @override
+  State<GalleryWidget> createState() => _GalleryWidgetState();
+}
+
+class _GalleryWidgetState extends State<GalleryWidget> {
+  late int index = widget.index;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Stack(
+      alignment: Alignment.bottomLeft,
+      children: [
+        PhotoViewGallery.builder(
+          pageController: widget.pageController,
+          itemCount: widget.urlImages.length,
+          builder: (context, index) {
+            final urlImage = widget.urlImages[index];
+            return PhotoViewGalleryPageOptions(
+              imageProvider: NetworkImage(urlImage),
+              minScale: PhotoViewComputedScale.contained,
+              maxScale: PhotoViewComputedScale.contained * 2,
+            );
+          },
+          onPageChanged: (index) => setState(() => this.index = index),
+        ),
+        Container(
+          padding: const EdgeInsets.all(16),
+          child: Text(
+            'Image ${index + 1}/${widget.urlImages.length}',
+            style:
+                const TextStyle(color: AppColors.dPrimaryColor, fontSize: 10),
+          ),
+        )
+      ],
+    ));
   }
 }
