@@ -82,7 +82,7 @@ class _RootAppState extends State<RootApp> {
         ],
         items: _navBarsItems(),
         navBarStyle: NavBarStyle.style6,
-        backgroundColor: Colors.transparent,
+        backgroundColor: AppColors.dSecondColor,
       ),
     );
   }

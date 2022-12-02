@@ -62,8 +62,8 @@ class _ListImagePostState extends State<ListImagePost> {
                                 begin: Alignment.bottomCenter,
                                 end: Alignment.topCenter,
                                 colors: [
-                              Colors.black.withOpacity(0.6),
-                              Colors.black.withOpacity(0.01)
+                              AppColors.dSecondColor.withOpacity(0.9),
+                              AppColors.dSecondColor.withOpacity(0.01)
                             ])),
                       ),
                     ),

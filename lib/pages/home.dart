@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     final PageController controller = PageController();
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: AppColors.dSecondColor,
       body: Stack(children: [
         PageView(
           scrollDirection: Axis.vertical,
@@ -23,12 +23,12 @@ class HomePage extends StatelessWidget {
           bottom: 30,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              ButtonHome(icon: Icons.favorite_border),
+            children: [
+              ButtonHome(icon: Icons.favorite_border, press: () {}),
               SizedBox(width: 30),
-              ButtonHome(icon: Icons.star_border),
+              ButtonHome(icon: Icons.star_border, press: () {}),
               SizedBox(width: 30),
-              ButtonHome(icon: Icons.arrow_forward_outlined),
+              ButtonHome(icon: Icons.arrow_forward_outlined, press: () {}),
             ],
           ),
         ),

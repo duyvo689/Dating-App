@@ -1,6 +1,9 @@
+import 'package:dating_app/components/cpn_home/button_home.dart';
 import 'package:dating_app/components/cpn_profile/list_image_profile.dart';
 import 'package:dating_app/configs/colors.dart';
+import 'package:dating_app/pages/edit_profile.dart';
 import 'package:flutter/material.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:unicons/unicons.dart';
 
 class Profile extends StatelessWidget {
@@ -10,7 +13,7 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     var deviceSize = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: AppColors.dLightDark,
+      backgroundColor: AppColors.dSecondColor,
       body: Stack(
         children: [
           Stack(children: [
@@ -52,7 +55,7 @@ class Profile extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.9,
                   width: MediaQuery.of(context).size.width,
                   decoration: const BoxDecoration(
-                      color: AppColors.dBlack,
+                      color: AppColors.dSecondColor,
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(40),
                           topRight: Radius.circular(40))),
@@ -75,7 +78,7 @@ class Profile extends StatelessWidget {
                       IgnorePointer(
                         child: Container(
                           decoration: const BoxDecoration(
-                              color: AppColors.dBlack,
+                              color: AppColors.dSecondColor,
                               borderRadius: BorderRadius.only(
                                   topLeft: Radius.circular(40),
                                   topRight: Radius.circular(40))),
@@ -112,6 +115,24 @@ class CustomInnerContent extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 40),
       child: Column(
         children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ButtonHome(icon: Icons.favorite_border, press: () {}),
+              SizedBox(width: 30),
+              ButtonHome(icon: Icons.star_border, press: () {}),
+              SizedBox(width: 30),
+              ButtonHome(
+                  icon: UniconsLine.edit_alt,
+                  press: () => pushNewScreen(
+                        context,
+                        screen: EditProfile(),
+                        withNavBar: false,
+                        pageTransitionAnimation:
+                            PageTransitionAnimation.cupertino,
+                      )),
+            ],
+          ),
           SizedBox(height: 16),
           CustomExploreBerlin(),
           SizedBox(height: 20),

@@ -44,6 +44,7 @@ dependencies:
   connectivity_plus: ^2.3.6+1
   unicons: ^2.1.0
   photo_view: ^0.14.0
+  dotted_border: ^2.0.0+3
 
 dev_dependencies:
   flutter_test:
